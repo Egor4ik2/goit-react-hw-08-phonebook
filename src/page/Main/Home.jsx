@@ -16,19 +16,7 @@ const Home = () => {
         <title>Home Page</title>
       </Helmet>
       <MainText>
-        <span>Welcome to your Phonebook App. </span>
-
-        {!isLoggedIn ? (
-          <HeaderSpan>
-            Please <NavLink to={'/register'}>register</NavLink> or{' '}
-            <NavLink to={'/login'}>Log In</NavLink> !
-          </HeaderSpan>
-        ) : (
-          <HeaderSpan>
-            You can work with your contacts folowing this{' '}
-            <NavLink to={'/contacts'}>link</NavLink> !
-          </HeaderSpan>
-        )}
+        <span>Welcome to your Phonebook</span>
       </MainText>
     </>
   );
