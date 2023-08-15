@@ -1,14 +1,14 @@
 
 import { Helmet } from 'react-helmet-async';
 import React from 'react';
-import { HeaderSpan, MainText } from './Main.styled';
-import { useAuth } from '../../Hooks/Auth';
-import { NavLink } from 'react-router-dom';
+import { MainText } from './Main.styled';
+
+
 
 
 
 const Home = () => {
-  const { isLoggedIn } = useAuth();
+
 
   return (
     <>
