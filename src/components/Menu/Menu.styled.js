@@ -1,27 +1,28 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-  padding: 0px;
-  width: 80px;
-  height: 40px;
-
-  font-size: 16px;
+  padding: 12px 24px;
+  width: 140px;
+  font-size: 18px;
   font-weight: 700;
   color: #fff;
   cursor: pointer;
+  background-color: #3388cc;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 
-  background-color: #c14646;
-  border: 1px solid #fff;
-  border-radius: 10px;
+  &:hover {
+    background-color: #1d5d89;
+  }
 `;
 
 const Text = styled.p`
-  padding: 5px;
+  padding: 8px;
   margin: 0;
-
-  font-size: 16px;
-  font-weight: 700;
-  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+  color: #555;
 `;
 
 export { Button, Text };

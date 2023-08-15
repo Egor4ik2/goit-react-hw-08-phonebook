@@ -19,7 +19,7 @@ export const userRegister = createAsyncThunk(
       setAuthToken(response.data.token);
       return response.data;
     } catch (error) {
-      thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
@@ -32,7 +32,9 @@ export const userLogIn = createAsyncThunk(
       setAuthToken(response.data.token);
       return response.data;
     } catch (error) {
-      thunkAPI.rejectWithValue(error.message);
+      alert("Something went wrong ! Please check your login and password and try again !");
+      return thunkAPI.rejectWithValue(error.message);
+      
     }
   }
 );
@@ -45,7 +47,7 @@ export const userLogOut = createAsyncThunk(
       clearAuthToken();
       return response.data;
     } catch (error) {
-      thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
@@ -63,8 +65,7 @@ export const userRefresh = createAsyncThunk(
       const response = await axios.get('users/current');
       return response.data;
     } catch (error) {
-      thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
-

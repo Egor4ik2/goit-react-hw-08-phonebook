@@ -1,18 +1,20 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
-const MainHeader = styled.h1`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  margin: 50px auto;
+const MainText = styled.h1`
+  margin: 60px auto;
   text-align: center;
-  max-width: 550px;
+  max-width: 600px;
+  font-size: 36px;
+  font-weight: 800;
+  color: #3388cc;
 `;
 
 const HeaderSpan = styled.span`
-  color: #c14646;
+  color: black;
+  display: inline-block;
+  margin-top: 30px;
+  font-size: 22px;
+  font-weight: 600;
 `;
 
-export { MainHeader, HeaderSpan };
+export { MainText, HeaderSpan };

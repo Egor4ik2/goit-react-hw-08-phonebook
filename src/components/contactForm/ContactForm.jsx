@@ -4,11 +4,7 @@ import { useState } from 'react';
 import { addContact } from '../../Redux/Contacts/Operations';
 import { selectContacts } from '../../Redux/choises';
 
-
-
-
-
-
+import { StyledContactForm, Input, Label, Button } from './ContactForm.styled';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
@@ -56,10 +52,10 @@ export const ContactForm = () => {
 
   return (
     <>
-      <form  onSubmit={handleSubmit}>
-        <label>
+      <StyledContactForm onSubmit={handleSubmit}>
+        <Label>
           Name
-          <input
+          <Input
             onChange={handleChange}
             value={name}
             autoComplete="off"
@@ -69,10 +65,10 @@ export const ContactForm = () => {
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
           />
-        </label>
-        <label>
+        </Label>
+        <Label>
           Phone
-          <input
+          <Input
             onChange={handleChange}
             value={number}
             type="tel"
@@ -81,9 +77,9 @@ export const ContactForm = () => {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
           />
-        </label>
-        <button type="submit">Add contact</button>
-      </form>
+        </Label>
+        <Button type="submit">Add contact</Button>
+      </StyledContactForm>
     </>
   );
 };

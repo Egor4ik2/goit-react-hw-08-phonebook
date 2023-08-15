@@ -4,6 +4,15 @@ import { deleteContact } from '../../Redux/Contacts/Operations';
 
 
 
+import {
+  StyledContactsList,
+  ListItem,
+  Text,
+  Number,
+  DeleteBtn,
+} from './ContactList.styled';
+
+
 export const ContactList = () => {
   const data = useSelector(selectContacts);
   const filter = useSelector(selectFilter);
@@ -16,27 +25,23 @@ export const ContactList = () => {
 
   const createContactsMarkup = ({ id, name, number }) => {
     return (
-      <li key={id} >
-        <span >
+      <ListItem key={id}>
+        <Text>
           <b>{name}</b>
+        </Text>
+        <span>
+          <Number>{number}</Number>
         </span>
-        <span >
-          <i>{number}</i>
-        </span>
-        <button
-         
-          type="button"
-          onClick={() => onContactDelete(id)}
-        >
+        <DeleteBtn type="button" onClick={() => onContactDelete(id)}>
           Delete
-        </button>
-      </li>
+        </DeleteBtn>
+      </ListItem>
     );
   };
 
   if (filter) {
     return (
-      <ul >
+      <StyledContactsList>
         {data
           .filter(({ name }) =>
             name.toLowerCase().includes(filter.toLowerCase())
@@ -44,16 +49,15 @@ export const ContactList = () => {
           .map(el => {
             return createContactsMarkup(el);
           })}
-      </ul>
+      </StyledContactsList>
     );
   }
 
   return (
-    <ul >
+    <StyledContactsList>
       {data.map(el => {
         return createContactsMarkup(el);
       })}
-    </ul>
+    </StyledContactsList>
   );
 };
-

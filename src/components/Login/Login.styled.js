@@ -2,14 +2,14 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 const StyledLink = styled(NavLink)`
-  color: black;
-  font-size: 24px;
-  font-weight: 700;
+  color: #3388cc;
+  font-size: 18px;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
 
   &.active {
-    color: #c14646;
+    color: black;
   }
 
   &:hover {
@@ -18,8 +18,9 @@ const StyledLink = styled(NavLink)`
 `;
 
 const Header = styled.header`
-  padding: 30px 60px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px 60px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #f8f8f8;
 `;
 
 const Nav = styled.nav`
@@ -31,11 +32,15 @@ const Nav = styled.nav`
 const NavWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 45px;
+  gap: 30px;
 `;
 
 const Container = styled.div`
-  margin: 30px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 `;
 
 export { StyledLink, Header, Nav, NavWrapper, Container };

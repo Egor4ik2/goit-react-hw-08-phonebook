@@ -9,6 +9,7 @@ import { Filter } from '../components/filter/Filter';
 import { fetchContacts } from '../Redux/Contacts/Operations';
 import { selectError, selectIsLoading } from '../Redux/choises';
 
+
 const Contacts = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
@@ -29,7 +30,7 @@ const Contacts = () => {
       <Filter />
       {isLoading && !error && <b>Request in progress...</b>}
       <ContactList />
-      {isLoading && !error && <b>Request in progress...</b>}
+
     </>
   );
 };
